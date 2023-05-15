@@ -3,17 +3,16 @@ import { useState } from "react"
 import React from "react"
 
 export default function Body() {
-    const [isGoingOut, setIsGoingOut] = React.useState(true)
-    
+   const [isGoingOut, setIsGoingOut] = React.useState(true)
+   
     const handleClick = () => {
-        setIsGoingOut(prevState => !prevState)
-    }
-    
+    setIsGoingOut(isGoingOut => !isGoingOut)
+   }
     
     
     return (
         <div className="bodySection">
-            <button className="answerBtn" onClick={handleClick}>{isGoingOut ? "Yes": "No"}</button>
+            <button className="answerBtn" onClick={handleClick}>{isGoingOut ? "Yes" : "No"}</button>
         </div>
     )
 }
