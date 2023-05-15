@@ -1,9 +1,19 @@
 import "./body.css"
+import { useState } from "react"
+import React from "react"
 
 export default function Body() {
+    const [isGoingOut, setIsGoingOut] = React.useState(true)
+    
+    const handleClick = () => {
+        setIsGoingOut(prevState => !prevState)
+    }
+    
+    
+    
     return (
         <div className="bodySection">
-            <button className="answerBtn">Yes</button>
+            <button className="answerBtn" onClick={handleClick}>{isGoingOut ? "Yes": "No"}</button>
         </div>
     )
 }
